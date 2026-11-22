@@ -1,0 +1,21 @@
+/* Custom refinements for NISERA Website */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+.filter-btn.active {
+  background-color: #644A3A;
+  color: #FDFBF8;
+  box-shadow: 0 4px 12px rgba(100, 74, 58, 0.2);
+}
+
+.product-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px -6px rgba(100, 74, 58, 0.14);
+}

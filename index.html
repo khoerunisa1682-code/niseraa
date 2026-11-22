@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NISERA — Simple, Graceful You | Hijab Sekolah & Modest Fashion</title>
+  <meta name="description" content="NISERA menghadirkan hijab sekolah dan modest fashion dengan karakter Simple, Elegant, Modern, Graceful, dan Timeless. Lembut di kulit, sejuk & nyaman dipakai setiap hari." />
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: {
+              50: '#FDFBF8',
+              100: '#F8F3EC',
+              200: '#EFE6DA',
+              300: '#E2D3C1',
+            },
+            taupe: {
+              400: '#B59B84',
+              500: '#9A7E66',
+              600: '#7D634E',
+              700: '#644A3A',
+              800: '#4E382B',
+              900: '#3B291F',
+            },
+            blush: {
+              100: '#FBECEE',
+              200: '#F5D6DA',
+              300: '#EAB9C0',
+              500: '#C97B86',
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 10px 40px -10px rgba(100, 74, 58, 0.10)',
+            'card': '0 4px 24px -4px rgba(100, 74, 58, 0.07)',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-cream-50 text-taupe-900 font-sans antialiased selection:bg-blush-200 selection:text-taupe-900">
+
+  <!-- Navbar -->
+  <header id="navbar" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-cream-50/90 backdrop-blur-md border-b border-cream-200/80">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Brand Logo -->
+      <a href="#beranda" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-cream-100 border border-taupe-400/40 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6 text-taupe-700" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 50V18C16 14.5 19.5 13 22 15.5L42 46C44.5 48.5 48 47 48 43.5V14" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M16 22C24 22 33 31 48 42" stroke="#B59B84" stroke-width="3" stroke-linecap="round"/>
+            <path d="M52 11L53.2 14.3L56.5 15.5L53.2 16.7L52 20L50.8 16.7L47.5 15.5L50.8 14.3L52 11Z" fill="#9A7E66"/>
+          </svg>
+        </div>
+        <div>
+          <span class="font-serif text-2xl font-bold tracking-[0.18em] text-taupe-800 block leading-none">NISERA</span>
+          <span class="text-[10px] tracking-[0.2em] uppercase text-taupe-500 font-medium">Simple, Graceful You</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-taupe-700">
+        <a href="#beranda" class="hover:text-taupe-900 transition-colors">Beranda</a>
+        <a href="#keunggulan" class="hover:text-taupe-900 transition-colors">Keunggulan</a>
+        <a href="#koleksi" class="hover:text-taupe-900 transition-colors">Koleksi Hijab</a>
+        <a href="#tentang" class="hover:text-taupe-900 transition-colors">Filosofi Brand</a>
+        <a href="#testimoni" class="hover:text-taupe-900 transition-colors">Ulasan</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a href="https://wa.me/6285600759304?text=Halo%20NISERA%2C%20saya%20tertarik%20untuk%20memesan%20hijab%20NISERA." target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center gap-2 bg-taupe-700 hover:bg-taupe-800 text-cream-50 text-sm font-semibold px-5 py-2.5 rounded-full shadow-sm transition-all hover:shadow-md">
+          <span>Pesan Sekarang</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="mobile-menu-btn" aria-label="Buka menu navigasi" class="md:hidden p-2 rounded-lg text-taupe-800 hover:bg-cream-100">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden bg-cream-50 border-b border-cream-200 px-6 py-4 space-y-3">
+      <a href="#beranda" class="block py-1.5 text-sm font-medium text-taupe-800">Beranda</a>
+      <a href="#keunggulan" class="block py-1.5 text-sm font-medium text-taupe-800">Keunggulan</a>
+      <a href="#koleksi" class="block py-1.5 text-sm font-medium text-taupe-800">Koleksi Hijab</a>
+      <a href="#tentang" class="block py-1.5 text-sm font-medium text-taupe-800">Filosofi Brand</a>
+      <a href="#testimoni" class="block py-1.5 text-sm font-medium text-taupe-800">Ulasan</a>
+      <a href="https://wa.me/6285600759304?text=Halo%20NISERA%2C%20saya%20ingin%20bertanya%20tentang%20produk%20hijab." target="_blank" rel="noopener noreferrer"
+         class="block w-full text-center bg-taupe-700 text-cream-50 text-sm font-semibold py-2.5 rounded-full mt-2">
+        Pesan via WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="beranda" class="relative pt-28 pb-20 lg:pt-36 lg:pb-28 overflow-hidden">
+    <!-- Decorative Soft Organic Shapes matching poster aesthetic -->
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-blush-200/45 blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 -right-24 w-80 h-80 rounded-full bg-cream-200/70 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush-100 border border-blush-200 text-taupe-800 text-xs font-semibold tracking-wide">
+            <span class="w-2 h-2 rounded-full bg-taupe-600"></span>
+            Simpel Dipakai, Elegan Setiap Hari
+          </div>
+
+          <h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-taupe-900 leading-[1.12]">
+            Hijab Sekolah & Harian untuk Tampil <span class="italic text-taupe-600 underline decoration-blush-300 decoration-4 underline-offset-8">Percaya Diri!</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-taupe-700 leading-relaxed max-w-xl">
+            <strong>Simple, Graceful You.</strong> NISERA menghadirkan koleksi hijab dengan potongan rapi, bahan lembut di kulit, dan sirkulasi udara sejuk—dirancang untuk menemani aktivitas belajar di sekolah hingga gaya anggun remaja dan wanita dewasa.
+          </p>
+
+          <!-- CTA Group -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#koleksi" class="inline-flex items-center justify-center bg-taupe-700 hover:bg-taupe-800 text-cream-50 font-semibold px-7 py-3.5 rounded-full shadow-soft transition-all hover:-translate-y-0.5">
+              Lihat Koleksi Hijab
+            </a>
+            <a href="https://wa.me/6285600759304?text=Halo%20NISERA%2C%20saya%20ingin%20pesan%20Hijab%20Sekolah%20NISERA." target="_blank" rel="noopener noreferrer"
+               class="inline-flex items-center gap-2.5 bg-white hover:bg-cream-100 text-taupe-800 border border-taupe-400/50 font-semibold px-6 py-3.5 rounded-full shadow-card transition-all">
+              <span class="w-6 h-6 rounded-full bg-[#25D366] text-white flex items-center justify-center">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+              </span>
+              <span>0856-0075-9304</span>
+            </a>
+          </div>
+
+          <!-- Brand Character Pills -->
+          <div class="pt-4 border-t border-cream-200/90">
+            <p class="text-xs uppercase tracking-widest text-taupe-500 font-semibold mb-2.5">Karakter Identitas NISERA</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-3.5 py-1 rounded-full bg-cream-100 text-taupe-800 text-xs font-medium border border-cream-300/70">Simple</span>
+              <span class="px-3.5 py-1 rounded-full bg-cream-100 text-taupe-800 text-xs font-medium border border-cream-300/70">Elegant</span>
+              <span class="px-3.5 py-1 rounded-full bg-cream-100 text-taupe-800 text-xs font-medium border border-cream-300/70">Modern</span>
+              <span class="px-3.5 py-1 rounded-full bg-cream-100 text-taupe-800 text-xs font-medium border border-cream-300/70">Graceful</span>
+              <span class="px-3.5 py-1 rounded-full bg-cream-100 text-taupe-800 text-xs font-medium border border-cream-300/70">Timeless</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Visual Showcase (Campaign Poster Card) -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-sm">
+            <!-- Decorative frame -->
+            <div class="absolute -inset-3 rounded-[2rem] bg-gradient-to-tr from-blush-200 via-cream-200 to-taupe-400/30 rotate-2"></div>
+            <div class="relative bg-white p-3 rounded-[1.75rem] shadow-soft border border-cream-200">
+              <img src="assets/poster-nisera.png" alt="Kampanye Hijab Sekolah NISERA — Simpel Dipakai, Elegan Setiap Hari"
+                   class="w-full h-auto rounded-2xl object-cover" />
+              <div class="mt-3 px-2 py-1.5 flex items-center justify-between text-xs text-taupe-700">
+                <span class="font-serif italic text-sm font-semibold text-taupe-800">"Simpel, Nyaman, Tetap Anggun"</span>
+                <span class="px-2.5 py-0.5 rounded-full bg-blush-100 text-taupe-800 font-semibold">Koleksi 2026</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Value Proposition / Keunggulan (Direct from Poster Icons) -->
+  <section id="keunggulan" class="py-20 bg-cream-100/70 border-y border-cream-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-taupe-500">Kenapa Memilih NISERA?</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-taupe-900 mt-2">Kenyamanan Sepanjang Hari, Keanggunan di Setiap Aktivitas</h2>
+        <p class="text-sm sm:text-base text-taupe-700 mt-3">Dirancang khusus untuk menjawab kebutuhan hijab harian yang praktis namun tetap rapi dan berkelas.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1: Lembut di Kulit -->
+        <div class="bg-cream-50 rounded-3xl p-8 border border-cream-200 shadow-card hover:-translate-y-1 transition-transform">
+          <div class="w-16 h-16 rounded-full bg-blush-200/70 text-taupe-800 flex items-center justify-center mb-6">
+            <!-- Feather Icon -->
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z"/>
+              <line x1="16" y1="8" x2="2" y2="22"/>
+              <line x1="17.5" y1="15" x2="9" y2="15"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-taupe-900 mb-2">Lembut di Kulit</h3>
+          <p class="text-sm text-taupe-700 leading-relaxed">
+            Serat kain pilihan bertekstur halus dan ramah untuk kulit sensitif anak maupun remaja. Tidak membuat gatal atau iritasi meski dipakai dari pagi hingga sore.
+          </p>
+        </div>
+
+        <!-- Feature 2: Sejuk & Nyaman -->
+        <div class="bg-cream-50 rounded-3xl p-8 border border-cream-200 shadow-card hover:-translate-y-1 transition-transform">
+          <div class="w-16 h-16 rounded-full bg-blush-200/70 text-taupe-800 flex items-center justify-center mb-6">
+            <!-- Breathable Airflow Icon -->
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16c2.5-1.5 5.5-1.5 8 0s5.5 1.5 8 0"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 11V5m0 0L5 7m2-2l2 2"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 10V4m0 0l-2 2m2-2l2 2"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 11V5m0 0l-2 2m2-2l2 2"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-taupe-900 mb-2">Sejuk &amp; Nyaman</h3>
+          <p class="text-sm text-taupe-700 leading-relaxed">
+            Sirkulasi udara optimal (<em>breathable</em>) dan menyerap keringat dengan baik. Tetap terasa adem saat kegiatan belajar di kelas, upacara bendera, maupun ekstrakurikuler Pramuka.
+          </p>
+        </div>
+
+        <!-- Feature 3: Tampilan Elegan -->
+        <div class="bg-cream-50 rounded-3xl p-8 border border-cream-200 shadow-card hover:-translate-y-1 transition-transform">
+          <div class="w-16 h-16 rounded-full bg-blush-200/70 text-taupe-800 flex items-center justify-center mb-6">
+            <!-- Diamond Icon -->
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 3h12l4 6-10 12L2 9l4-6z"/>
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2 9h20M12 21L8 9l4-6 4 6-4 12z"/>
+            </svg>
+          </div>
+          <h3 class="font-serif text-2xl font-bold text-taupe-900 mb-2">Tampilan Elegan</h3>
+          <p class="text-sm text-taupe-700 leading-relaxed">
+            Desain <em>pet</em> antem yang tegak di dahi dan jatuhnya bahan yang rapi (<em>flowy</em>). Praktis langsung pakai tanpa banyak jarum pentul, tetap anggun dan <em>timeless</em>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Katalog Koleksi Produk & Interactive Filter -->
+  <section id="koleksi" class="py-20">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-taupe-500">Katalog Produk</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-taupe-900 mt-2">Koleksi Hijab NISERA</h2>
+          <p class="text-sm text-taupe-700 mt-2 max-w-xl">Dari seragam sekolah SD, SMP, SMA hingga koleksi kasual elegan untuk remaja dan wanita dewasa.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="flex flex-wrap gap-2" id="filter-buttons">
+          <button data-filter="all" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-taupe-700 text-cream-50 transition-all">Semua Koleksi</button>
+          <button data-filter="sekolah" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-cream-100 text-taupe-800 hover:bg-cream-200 transition-all">Hijab Sekolah</button>
+          <button data-filter="remaja" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-cream-100 text-taupe-800 hover:bg-cream-200 transition-all">Remaja &amp; Dewasa</button>
+        </div>
+      </div>
+
+      <!-- Product Grid -->
+      <div id="product-grid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Product 1: Putih Sekolah -->
+        <article data-category="sekolah" class="product-card bg-white rounded-3xl border border-cream-200 overflow-hidden shadow-card flex flex-col justify-between group">
+          <div>
+            <div class="relative h-60 bg-gradient-to-b from-[#F4F6FA] to-[#E6ECF5] flex items-center justify-center p-6 overflow-hidden">
+              <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-taupe-800 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">Best Seller Sekolah</span>
+              <!-- Stylized Hijab Illustration -->
+              <svg class="w-36 h-36 drop-shadow-md group-hover:scale-105 transition-transform duration-300" viewBox="0 0 160 160" fill="none">
+                <path d="M80 22C50 22 32 45 28 84C25 112 36 132 80 138C124 132 135 112 132 84C128 45 110 22 80 22Z" fill="#FFFFFF" stroke="#DCE3EE" stroke-width="2"/>
+                <path d="M54 56C54 41 65 32 80 32C95 32 106 41 106 56C106 72 95 84 80 84C65 84 54 72 54 56Z" fill="#F8E7DF"/>
+                <path d="M48 82C62 94 98 94 112 82C116 105 104 128 80 134C56 128 44 105 48 82Z" fill="#F7F9FC"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs text-taupe-500 mb-1">
+                <span>Seri Sekolah • Instan Bergo</span>
+                <span>Ukuran S / M / L</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-taupe-900">Nisera Classic White</h3>
+              <p class="text-sm text-taupe-700 mt-2 leading-relaxed">
+                Hijab sekolah instan warna putih bersih dengan pet antem lembut. Anti menerawang, adem dipakai seharian di sekolah.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-cream-100">
+            <div>
+              <span class="text-[11px] text-taupe-500 block">Harga</span>
+              <span class="text-lg font-bold text-taupe-900">Rp 45.000</span>
+            </div>
+            <button onclick="openOrderModal('Nisera Classic White', 'Rp 45.000')"
+                    class="bg-taupe-700 hover:bg-taupe-800 text-cream-50 text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+              Pesan Produk
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 2: Cokelat Pramuka -->
+        <article data-category="sekolah" class="product-card bg-white rounded-3xl border border-cream-200 overflow-hidden shadow-card flex flex-col justify-between group">
+          <div>
+            <div class="relative h-60 bg-gradient-to-b from-[#F5EFEA] to-[#E7D8CB] flex items-center justify-center p-6 overflow-hidden">
+              <span class="absolute top-4 left-4 bg-taupe-800 text-cream-50 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">Favorit Pramuka</span>
+              <svg class="w-36 h-36 drop-shadow-md group-hover:scale-105 transition-transform duration-300" viewBox="0 0 160 160" fill="none">
+                <path d="M80 22C50 22 32 45 28 84C25 112 36 132 80 138C124 132 135 112 132 84C128 45 110 22 80 22Z" fill="#5D3E2E" stroke="#472E21" stroke-width="2"/>
+                <path d="M54 56C54 41 65 32 80 32C95 32 106 41 106 56C106 72 95 84 80 84C65 84 54 72 54 56Z" fill="#F8E7DF"/>
+                <path d="M48 82C62 94 98 94 112 82C116 105 104 128 80 134C56 128 44 105 48 82Z" fill="#4E3325"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs text-taupe-500 mb-1">
+                <span>Seri Sekolah • Instan Bergo</span>
+                <span>Ukuran S / M / L</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-taupe-900">Nisera Scout Brown</h3>
+              <p class="text-sm text-taupe-700 mt-2 leading-relaxed">
+                Warna cokelat tua standar seragam Pramuka yang pekat dan tidak mudah pudar. Ringan serta tidak mudah kusut saat aktivitas lapangan.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-cream-100">
+            <div>
+              <span class="text-[11px] text-taupe-500 block">Harga</span>
+              <span class="text-lg font-bold text-taupe-900">Rp 45.000</span>
+            </div>
+            <button onclick="openOrderModal('Nisera Scout Brown', 'Rp 45.000')"
+                    class="bg-taupe-700 hover:bg-taupe-800 text-cream-50 text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+              Pesan Produk
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 3: Hitam / Navy Sekolah -->
+        <article data-category="sekolah" class="product-card bg-white rounded-3xl border border-cream-200 overflow-hidden shadow-card flex flex-col justify-between group">
+          <div>
+            <div class="relative h-60 bg-gradient-to-b from-[#ECEEF2] to-[#D9DEE7] flex items-center justify-center p-6 overflow-hidden">
+              <span class="absolute top-4 left-4 bg-white/90 text-taupe-800 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">Harian &amp; Ekskul</span>
+              <svg class="w-36 h-36 drop-shadow-md group-hover:scale-105 transition-transform duration-300" viewBox="0 0 160 160" fill="none">
+                <path d="M80 22C50 22 32 45 28 84C25 112 36 132 80 138C124 132 135 112 132 84C128 45 110 22 80 22Z" fill="#27292E" stroke="#18191C" stroke-width="2"/>
+                <path d="M54 56C54 41 65 32 80 32C95 32 106 41 106 56C106 72 95 84 80 84C65 84 54 72 54 56Z" fill="#F8E7DF"/>
+                <path d="M48 82C62 94 98 94 112 82C116 105 104 128 80 134C56 128 44 105 48 82Z" fill="#1F2126"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs text-taupe-500 mb-1">
+                <span>Seri Sekolah • Instan Bergo</span>
+                <span>Ukuran S / M / L</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-taupe-900">Nisera Midnight Black</h3>
+              <p class="text-sm text-taupe-700 mt-2 leading-relaxed">
+                Hitam pekat elegan untuk seragam harian, kegiatan mengaji, maupun olahraga. Praktis langsung slup dalam 5 detik.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-cream-100">
+            <div>
+              <span class="text-[11px] text-taupe-500 block">Harga</span>
+              <span class="text-lg font-bold text-taupe-900">Rp 45.000</span>
+            </div>
+            <button onclick="openOrderModal('Nisera Midnight Black', 'Rp 45.000')"
+                    class="bg-taupe-700 hover:bg-taupe-800 text-cream-50 text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+              Pesan Produk
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 4: Graceful Taupe (Remaja & Dewasa) -->
+        <article data-category="remaja" class="product-card bg-white rounded-3xl border border-cream-200 overflow-hidden shadow-card flex flex-col justify-between group">
+          <div>
+            <div class="relative h-60 bg-gradient-to-b from-cream-100 to-cream-200 flex items-center justify-center p-6 overflow-hidden">
+              <span class="absolute top-4 left-4 bg-blush-200 text-taupe-900 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">Signature Color</span>
+              <svg class="w-36 h-36 drop-shadow-md group-hover:scale-105 transition-transform duration-300" viewBox="0 0 160 160" fill="none">
+                <path d="M80 22C50 22 32 45 28 84C25 112 36 132 80 138C124 132 135 112 132 84C128 45 110 22 80 22Z" fill="#9A7E66" stroke="#7D634E" stroke-width="2"/>
+                <path d="M54 56C54 41 65 32 80 32C95 32 106 41 106 56C106 72 95 84 80 84C65 84 54 72 54 56Z" fill="#F8E7DF"/>
+                <path d="M48 82C62 94 98 94 112 82C116 105 104 128 80 134C56 128 44 105 48 82Z" fill="#886D56"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs text-taupe-500 mb-1">
+                <span>Seri Signature • Pashmina / Segi Empat</span>
+                <span>All Size</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-taupe-900">Nisera Warm Taupe</h3>
+              <p class="text-sm text-taupe-700 mt-2 leading-relaxed">
+                Nuansa taupe hangat yang terinspirasi langsung dari identitas NISERA. Mudah dibentuk, jatuh anggun untuk kuliah maupun acara formal.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-cream-100">
+            <div>
+              <span class="text-[11px] text-taupe-500 block">Harga</span>
+              <span class="text-lg font-bold text-taupe-900">Rp 59.000</span>
+            </div>
+            <button onclick="openOrderModal('Nisera Warm Taupe', 'Rp 59.000')"
+                    class="bg-taupe-700 hover:bg-taupe-800 text-cream-50 text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+              Pesan Produk
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 5: Soft Cream Silk Touch -->
+        <article data-category="remaja" class="product-card bg-white rounded-3xl border border-cream-200 overflow-hidden shadow-card flex flex-col justify-between group">
+          <div>
+            <div class="relative h-60 bg-gradient-to-b from-cream-50 to-cream-200 flex items-center justify-center p-6 overflow-hidden">
+              <span class="absolute top-4 left-4 bg-white/90 text-taupe-800 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">Timeless Edition</span>
+              <svg class="w-36 h-36 drop-shadow-md group-hover:scale-105 transition-transform duration-300" viewBox="0 0 160 160" fill="none">
+                <path d="M80 22C50 22 32 45 28 84C25 112 36 132 80 138C124 132 135 112 132 84C128 45 110 22 80 22Z" fill="#EFE6DA" stroke="#D7C7B4" stroke-width="2"/>
+                <path d="M54 56C54 41 65 32 80 32C95 32 106 41 106 56C106 72 95 84 80 84C65 84 54 72 54 56Z" fill="#F8E7DF"/>
+                <path d="M48 82C62 94 98 94 112 82C116 105 104 128 80 134C56 128 44 105 48 82Z" fill="#E4D7C6"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs text-taupe-500 mb-1">
+                <span>Seri Signature • Segi Empat Voal</span>
+                <span>115 x 115 cm</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-taupe-900">Nisera Ivory Cream</h3>
+              <p class="text-sm text-taupe-700 mt-2 leading-relaxed">
+                Voal premium lembut dengan warna cream klasik yang memancarkan kesan bersih, feminin, dan tidak lekang oleh waktu.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-cream-100">
+            <div>
+              <span class="text-[11px] text-taupe-500 block">Harga</span>
+              <span class="text-lg font-bold text-taupe-900">Rp 55.000</span>
+            </div>
+            <button onclick="openOrderModal('Nisera Ivory Cream', 'Rp 55.000')"
+                    class="bg-taupe-700 hover:bg-taupe-800 text-cream-50 text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+              Pesan Produk
+            </button>
+          </div>
+        </article>
+
+        <!-- Product 6: Soft Blush Pink -->
+        <article data-category="remaja" class="product-card bg-white rounded-3xl border border-cream-200 overflow-hidden shadow-card flex flex-col justify-between group">
+          <div>
+            <div class="relative h-60 bg-gradient-to-b from-blush-100 to-blush-200/70 flex items-center justify-center p-6 overflow-hidden">
+              <span class="absolute top-4 left-4 bg-white/90 text-taupe-800 text-[11px] font-bold px-3 py-1 rounded-full shadow-sm">New Arrival</span>
+              <svg class="w-36 h-36 drop-shadow-md group-hover:scale-105 transition-transform duration-300" viewBox="0 0 160 160" fill="none">
+                <path d="M80 22C50 22 32 45 28 84C25 112 36 132 80 138C124 132 135 112 132 84C128 45 110 22 80 22Z" fill="#E8B9C0" stroke="#D49FA7" stroke-width="2"/>
+                <path d="M54 56C54 41 65 32 80 32C95 32 106 41 106 56C106 72 95 84 80 84C65 84 54 72 54 56Z" fill="#F8E7DF"/>
+                <path d="M48 82C62 94 98 94 112 82C116 105 104 128 80 134C56 128 44 105 48 82Z" fill="#DDAAB2"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <div class="flex items-center justify-between text-xs text-taupe-500 mb-1">
+                <span>Seri Signature • Daily Instan</span>
+                <span>All Size</span>
+              </div>
+              <h3 class="font-serif text-2xl font-bold text-taupe-900">Nisera Soft Blush</h3>
+              <p class="text-sm text-taupe-700 mt-2 leading-relaxed">
+                Sentuhan pastel lembut yang ceria namun tetap anggun untuk remaja maupun wanita dewasa di berbagai momen santai.
+              </p>
+            </div>
+          </div>
+          <div class="px-6 pb-6 pt-2 flex items-center justify-between border-t border-cream-100">
+            <div>
+              <span class="text-[11px] text-taupe-500 block">Harga</span>
+              <span class="text-lg font-bold text-taupe-900">Rp 52.000</span>
+            </div>
+            <button onclick="openOrderModal('Nisera Soft Blush', 'Rp 52.000')"
+                    class="bg-taupe-700 hover:bg-taupe-800 text-cream-50 text-xs font-semibold px-4 py-2.5 rounded-full transition-colors">
+              Pesan Produk
+            </button>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Story & Identity Philosophy (From Brand Identity Sheet) -->
+  <section id="tentang" class="py-20 bg-cream-100 border-t border-cream-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <!-- Brand Monogram Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-cream-50 rounded-[2rem] p-10 border border-cream-300 shadow-soft text-center">
+            <div class="w-28 h-28 mx-auto rounded-full bg-cream-100 border border-taupe-400/40 flex items-center justify-center mb-6">
+              <svg class="w-16 h-16 text-taupe-700" viewBox="0 0 64 64" fill="none">
+                <path d="M16 50V18C16 14.5 19.5 13 22 15.5L42 46C44.5 48.5 48 47 48 43.5V14" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+                <path d="M16 22C24 22 33 31 48 42" stroke="#B59B84" stroke-width="2.8" stroke-linecap="round"/>
+                <path d="M52 11L53.2 14.3L56.5 15.5L53.2 16.7L52 20L50.8 16.7L47.5 15.5L50.8 14.3L52 11Z" fill="#9A7E66"/>
+              </svg>
+            </div>
+            <h3 class="font-serif text-3xl font-bold tracking-[0.22em] text-taupe-900">NISERA</h3>
+            <div class="flex items-center justify-center gap-3 my-3">
+              <span class="h-px w-10 bg-taupe-400"></span>
+              <span class="text-xs text-taupe-500">✦</span>
+              <span class="h-px w-10 bg-taupe-400"></span>
+            </div>
+            <p class="font-serif italic text-xl text-taupe-700">"Simple, Graceful You"</p>
+            <p class="text-xs text-taupe-500 mt-2">Sederhana • Anggun • Dirimu</p>
+
+            <!-- Color Palette Swatches -->
+            <div class="mt-8 pt-6 border-t border-cream-200">
+              <span class="text-[11px] uppercase tracking-widest text-taupe-500 font-semibold block mb-3">Palet Warna Identitas</span>
+              <div class="flex justify-center gap-4">
+                <div class="text-center">
+                  <span class="w-9 h-9 rounded-full bg-cream-100 border border-taupe-400/50 inline-block shadow-sm"></span>
+                  <span class="text-[11px] text-taupe-700 block mt-1">Soft Cream</span>
+                </div>
+                <div class="text-center">
+                  <span class="w-9 h-9 rounded-full bg-taupe-500 inline-block shadow-sm"></span>
+                  <span class="text-[11px] text-taupe-700 block mt-1">Warm Taupe</span>
+                </div>
+                <div class="text-center">
+                  <span class="w-9 h-9 rounded-full bg-blush-200 inline-block shadow-sm"></span>
+                  <span class="text-[11px] text-taupe-700 block mt-1">Gentle Blush</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Brand Story Content -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-taupe-500">Filosofi &amp; Cerita Brand</span>
+          <h2 class="font-serif text-3xl sm:text-4xl font-bold text-taupe-900">Lahir dari Ketulusan untuk Menghadirkan Keanggunan yang Sederhana</h2>
+          
+          <p class="text-sm sm:text-base text-taupe-700 leading-relaxed">
+            <strong>NISERA</strong> terinspirasi dari makna personal kata <em>"Nisa"</em> (perempuan) yang dikemas secara singkat dan modern agar mudah diingat. Setiap lekukan pada monogram huruf <strong>"N"</strong> merepresentasikan kelembutan helaian hijab yang membingkai wajah dengan anggun.
+          </p>
+
+          <div class="grid sm:grid-cols-2 gap-4 pt-2">
+            <div class="bg-cream-50 p-5 rounded-2xl border border-cream-200">
+              <h4 class="font-serif text-lg font-bold text-taupe-900 mb-1">Makna Tagline</h4>
+              <p class="text-xs sm:text-sm text-taupe-700 leading-relaxed">
+                <strong>"Simple, Graceful You"</strong> (Sederhana. Anggun. Dirimu.) adalah janji kami bahwa desain yang simpel justru mampu memancarkan kepercayaan diri dan keanggunan alami setiap pemakainya.
+              </p>
+            </div>
+            <div class="bg-cream-50 p-5 rounded-2xl border border-cream-200">
+              <h4 class="font-serif text-lg font-bold text-taupe-900 mb-1">Untuk Setiap Fase</h4>
+              <p class="text-xs sm:text-sm text-taupe-700 leading-relaxed">
+                Dirancang adaptif mulai dari hijab sekolah untuk anak-anak hingga koleksi <em>modest fashion</em> modern bagi remaja dan wanita dewasa yang tak lekang oleh waktu (<em>timeless</em>).
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimoni" class="py-20 bg-cream-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-taupe-500">Kata Mereka</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-taupe-900 mt-2">Dipercaya Siswi &amp; Para Ibu</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white p-7 rounded-3xl border border-cream-200 shadow-card">
+          <div class="flex text-amber-500 text-sm mb-3">★★★★★</div>
+          <p class="text-sm text-taupe-700 leading-relaxed italic mb-4">
+            "Anak saya paling suka pakai hijab putih dan Pramuka dari NISERA. Katanya adem banget, nggak bikin gatal di leher walaupun upacara panas-panasan."
+          </p>
+          <div class="text-xs font-bold text-taupe-900">Ibu Rahmawati</div>
+          <div class="text-[11px] text-taupe-500">Orang Tua Siswi SD</div>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-cream-200 shadow-card">
+          <div class="flex text-amber-500 text-sm mb-3">★★★★★</div>
+          <p class="text-sm text-taupe-700 leading-relaxed italic mb-4">
+            "Pet-nya rapi banget dan langsung tegak di dahi tanpa perlu berkali-kali dibenerin. Cocok buat buru-buru berangkat sekolah pagi!"
+          </p>
+          <div class="text-xs font-bold text-taupe-900">Alya Putri</div>
+          <div class="text-[11px] text-taupe-500">Siswi SMP</div>
+        </div>
+
+        <div class="bg-white p-7 rounded-3xl border border-cream-200 shadow-card">
+          <div class="flex text-amber-500 text-sm mb-3">★★★★★</div>
+          <p class="text-sm text-taupe-700 leading-relaxed italic mb-4">
+            "Warna Warm Taupe-nya kalem dan mewah. Bahannya jatuh, gampang diatur, dan tetap kelihatan anggun buat dipakai kuliah sehari-hari."
+          </p>
+          <div class="text-xs font-bold text-taupe-900">Nabila Azzahra</div>
+          <div class="text-[11px] text-taupe-500">Mahasiswi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="py-16 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto rounded-[2.5rem] bg-gradient-to-r from-taupe-800 via-taupe-700 to-taupe-800 text-cream-50 p-10 sm:p-14 text-center relative overflow-hidden shadow-soft">
+      <div class="absolute -right-12 -bottom-12 w-64 h-64 rounded-full bg-blush-300/15 blur-2xl pointer-events-none"></div>
+      <span class="inline-block px-4 py-1 rounded-full bg-cream-50/15 text-cream-100 text-xs font-semibold tracking-wider uppercase mb-4">
+        Simpel, Nyaman, Tetap Anggun
+      </span>
+      <h2 class="font-serif text-3xl sm:text-5xl font-bold mb-4">Siap Tampil Percaya Diri Setiap Hari?</h2>
+      <p class="text-sm sm:text-base text-cream-200 max-w-xl mx-auto mb-8">
+        Pesan hijab sekolah maupun koleksi harian NISERA sekarang melalui WhatsApp. Melayani pembelian satuan maupun pemesanan seragam sekolah.
+      </p>
+      <a href="https://wa.me/6285600759304?text=Halo%20NISERA%2C%20saya%20ingin%20memesan%20hijab%20NISERA." target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center gap-3 bg-cream-50 hover:bg-white text-taupe-900 font-bold px-8 py-4 rounded-full shadow-lg transition-transform hover:scale-105">
+        <span class="w-7 h-7 rounded-full bg-[#25D366] text-white flex items-center justify-center">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/></svg>
+        </span>
+        <span>Pesan Sekarang • 0856-0075-9304</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-cream-100 border-t border-cream-200 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <span class="font-serif text-2xl font-bold tracking-[0.2em] text-taupe-900">NISERA</span>
+        <p class="text-xs text-taupe-600 mt-1">Simple, Graceful You • Simpel Dipakai, Elegan Setiap Hari</p>
+      </div>
+      <div class="text-xs text-taupe-600 text-center md:text-right">
+        <p>Pemesanan &amp; Informasi: <a href="https://wa.me/6285600759304" class="font-semibold text-taupe-800 hover:underline">085600759304 (WhatsApp)</a></p>
+        <p class="mt-1">&copy; 2026 NISERA Modest Fashion. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive Quick Order Modal -->
+  <div id="order-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-taupe-900/50 backdrop-blur-xs p-4">
+    <div class="bg-cream-50 rounded-3xl max-w-md w-full p-7 border border-cream-300 shadow-2xl relative">
+      <button onclick="closeOrderModal()" aria-label="Tutup modal" class="absolute top-5 right-5 text-taupe-500 hover:text-taupe-900">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+      <span class="text-xs font-bold uppercase tracking-widest text-taupe-500">Form Pemesanan Cepat</span>
+      <h3 id="modal-product-name" class="font-serif text-2xl font-bold text-taupe-900 mt-1">Nisera Classic White</h3>
+      <p id="modal-product-price" class="text-sm font-semibold text-taupe-600 mb-5">Rp 45.000</p>
+
+      <form id="whatsapp-order-form" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-taupe-800 mb-1">Nama Pemesan</label>
+          <input type="text" id="cust-name" required placeholder="Contoh: Ibu Siti / Alya"
+                 class="w-full px-4 py-2.5 rounded-xl bg-white border border-cream-300 text-sm focus:outline-none focus:border-taupe-600" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold text-taupe-800 mb-1">Ukuran</label>
+            <select id="cust-size" class="w-full px-3 py-2.5 rounded-xl bg-white border border-cream-300 text-sm focus:outline-none focus:border-taupe-600">
+              <option value="S (SD)">S (SD)</option>
+              <option value="M (SMP)" selected>M (SMP)</option>
+              <option value="L (SMA / Dewasa)">L (SMA / Dewasa)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-taupe-800 mb-1">Jumlah (Pcs)</label>
+            <input type="number" id="cust-qty" min="1" value="1" required
+                   class="w-full px-4 py-2.5 rounded-xl bg-white border border-cream-300 text-sm focus:outline-none focus:border-taupe-600" />
+          </div>
+        </div>
+        <button type="submit" class="w-full bg-taupe-700 hover:bg-taupe-800 text-cream-50 font-semibold py-3 rounded-full shadow-md transition-colors">
+          Lanjutkan ke WhatsApp
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
